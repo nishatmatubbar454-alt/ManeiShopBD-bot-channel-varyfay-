@@ -1,0 +1,13 @@
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types.web_app_info import WebAppInfo
+from config import settings
+
+def get_verified_reply_keyboard() -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text="🚀 Open Mini App", web_app=WebAppInfo(url=settings.MINI_APP_URL))],
+            [KeyboardButton(text="📊 My Profile / Referrals")]
+        ],
+        resize_keyboard=True
+    )
+
